@@ -27,8 +27,10 @@ then
 }
 
 USAGE(){
-echo -e "$R USAGE:: $N sh -backup.sh SOURCE_DIR DEST_DIR DAYS(Optional)"
-      }
+     echo -e "$R USAGE:: $N sh -backup.sh <SOURCE_DIR> <DEST_DIR> <DAYS(Optional)>"
+     exit 1
+    
+}
 
 
 mkdir -p /home/ec2-user/repo2-logs/
