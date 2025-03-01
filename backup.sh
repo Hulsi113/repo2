@@ -10,7 +10,7 @@ SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14} #if user is not providing number of days, we are taking 14 as default
 
-SOURCE_DIR="/home/ec2-user/app-logs"
+SOURCE_DIR="/home/ec2-user/backup-logs"
 
 LOGS_FOLDER="/home/ec2-user/shell-script-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
