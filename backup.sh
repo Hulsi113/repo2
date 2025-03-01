@@ -10,7 +10,6 @@ SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14} #if user is not providing number of days, we are taking 14 as default
 
-SOURCE_DIR="/home/ec2-user/backup-logs"
 
 LOGS_FOLDER="/home/ec2-user/shell-script-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
@@ -28,10 +27,18 @@ then
 }
 
 USAGE(){
-      echo -e "$R USAGE:: $N sh 18-backup.sh <SOURCE_DIR> <DEST_DIR> <DAYS(Optional)>"
-      exit1
+echo -e "$R USAGE:: $N sh -backup.sh SOURCE_DIR DEST_DIR DAYS(Optional)"
       }
-}
+
+
+mkdir -p /home/ec2-user/repo2-logs/
+
+if [$# -lt 2]
+then 
+    USAGE
+fi
+
+echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 
 
